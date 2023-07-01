@@ -1,0 +1,71 @@
+
+Basics
+Variables
+Keywords
+Input/Output
+Types
+Type Casting
+Operators
+Conditional Statements
+Strings
+Lists
+Loops
+Functions
+Some built-in functions
+Python data structures
+Dictionary
+Tuples
+(Short-Hands)
+OOP
+Class vs. Instance
+Data hiding
+Getter & Setter
+Inheritance
+Magic methods
+Abstraction
+Polymorphism
+Files
+Logging
+Typing
+Exceptions
+Modules
+Packages
+PIP
+With statement
+Decorators
+Python Date & Time
+Database:
+Itro
+CRUD
+Django
+Intro
+MVC / MVT architecture
+Setup a Django project
+Add an app
+Connect to DB
+Introduction to Django ORM
+Introduction to Django admin
+Writing more views and urls
+Rendering templates
+Referencing urls
+Django template language
+Creating forms
+Generic views
+Model fields
+How to make queries
+Queryset methods
+Field lookups
+How to serve static files in Django
+How to serve uploaded files
+How to serve static files in production mode
+Model Inheritance
+ModelForm
+Customizing admin site
+Customizing admin form, fieldsets, related objects, filter
+sidebar, search box, and etc
+Using the Django authentication system
+serialize/deserialize objects
+regex
+API view
+Web crawling
+Selenium
