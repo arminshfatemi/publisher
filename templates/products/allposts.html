@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+{% if books %}
+
+        {% for book in books %}
+            <li>
+                <ul><b> book name:</b> {{ book.name }}</ul>
+                <ul><b>description:</b> {{ book.description }}</ul>
+                <ul><b>
+                {% for a in book.author.all %}
+                authors:</b> {{ a }},
+                {% endfor %}
+                </ul>
+                <ul><b>created time:</b> {{ book.created_time }}</ul>
+
+                <ul><a href="allbooks/{{ book.id }}/" class="see_detail">detail</a></ul>
+            </li>
+            <hr>
+        {% endfor %}
+    <hr>
+
+{% comment %}
+    {% if is_paginated %}
+        <div class="pagination">
+            <span class="page-links">
+                {% if page_obj.has_previous %}
+                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                {% endif %}
+                <span class="page-current">
+                    Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
+                </span>
+                {% if page_obj.has_next %}
+                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                {% endif %}
+            </span>
+        </div>
+    {% endif %}
+{% else %}
+    <h3>My Cars</h3>
+    <p>No cars found!!! :(</p>
+{% endcomment %}
+{% endif %}
+
+
+</body>
+</html>

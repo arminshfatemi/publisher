@@ -31,6 +31,7 @@ class Book(models.Model):
     is_enable = models.BooleanField(default=True)
     file = models.FileField('file', upload_to='files/%Y/%m/%d/')
     created_time = models.DateTimeField(auto_now_add=True)
+    # writed_time =
     # bought_count = models.IntegerField(default=0,)
 
     # def increasing(self,):
