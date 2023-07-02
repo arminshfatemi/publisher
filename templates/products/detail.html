@@ -1,11 +1,12 @@
+{% extends 'base/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>detail of {{ book.name }}</title>
 </head>
 <body>
-
+{% block content %}
 <div>
     <li>
         <ul><b> book name:</b> {{ book.name }}</ul>
@@ -18,7 +19,7 @@
     </li>
 </div>
             <hr>
-
+{% endblock content %}
 
 
 </body>

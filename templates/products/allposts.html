@@ -1,11 +1,14 @@
+{% extends 'base/base.html' %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>All Posts page</title>
 </head>
 <body>
 
+{% block content %}
 
 {% if books %}
 
@@ -20,7 +23,7 @@
                 </ul>
                 <ul><b>created time:</b> {{ book.created_time }}</ul>
 
-                <ul><a href="allbooks/{{ book.id }}/" class="see_detail">detail</a></ul>
+                <ul><a href="/allbooks/{{ book.id }}/" >detail</a></ul>
             </li>
             <hr>
         {% endfor %}
@@ -48,6 +51,7 @@
 {% endcomment %}
 {% endif %}
 
+{% endblock content %}
 
 </body>
 </html>

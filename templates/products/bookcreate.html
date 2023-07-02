@@ -1,0 +1,25 @@
+{% extends 'base/base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Book Create</title>
+</head>
+<body>
+{% block content %}
+<form method="post" >
+    {% csrf_token %}
+
+    {{ form.as_p}}
+    {{ form.non_field_errors  }}
+    {{ field.errors }}
+
+    <input type="submit" value="Submit">
+
+
+
+</form>
+{% endblock content %}
+
+</body>
+</html>
