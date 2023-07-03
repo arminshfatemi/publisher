@@ -12,9 +12,13 @@
 
 <div class="topnav">
   <a class="active" href="{% url 'allbooks' %}">All Posts</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
-  <a href="#about">About</a>
+    {% if user.is_authenticated %}
+
+  <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+  <a href="{% url 'login' %}">login</a>
+  <a href="{% url 'register' %}">signup</a>
+    {% endif %}
 </div>
 
 </body>

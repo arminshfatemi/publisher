@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>register</title>
+</head>
+<body>
+<h1>for signup fill form bellow</h1>
+
+{% for message in messages %}
+<h5 style="color: red">{{ message }}</h5>
+{% endfor %}
+
+<form method="POST" >
+    {% csrf_token %}
+    <p>User name:</p>
+    <input type="text" name="username"  required/>
+    <p>email:</p>
+    <input type="email" name="email"  required />
+    <p>password:</p>
+    <input type="password" name="password" required />
+    <p>repeat password:</p>
+    <input type="password" name="password2" required />
+
+    <input type="submit"/>
+</form>
+
+
+</body>
+</html>

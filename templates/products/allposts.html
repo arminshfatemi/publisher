@@ -10,6 +10,12 @@
 
 {% block content %}
 
+    {% if user.is_authenticated %}
+        <h3> Wellcome {{ user.username }}</h3>
+    {% else %}
+        <h3>Wellcome  dear guest</h3>
+    {% endif %}
+
 {% if books %}
 
         {% for book in books %}
