@@ -15,10 +15,13 @@
     {% if user.is_authenticated %}
 
   <a href="{% url 'logout' %}">logout</a>
+  <a href="{% url 'createbook' %}">add book</a>
+
     {% else %}
   <a href="{% url 'login' %}">login</a>
   <a href="{% url 'register' %}">signup</a>
     {% endif %}
+    <a href="{% url 'about' %}">about</a>
 </div>
 
 </body>

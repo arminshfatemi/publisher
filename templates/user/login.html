@@ -1,3 +1,4 @@
+{% extends 'base/base.html' %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
     <title>login</title>
 </head>
 <body>
+{% block content %}
 <h1>fill form to login </h1>
 
 {% for message in messages %}
@@ -21,6 +23,7 @@
     <input type="submit">
 
 </form>
+{% endblock content %}
 
 </body>
 </html>

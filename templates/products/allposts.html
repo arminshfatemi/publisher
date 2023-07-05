@@ -35,18 +35,18 @@
         {% endfor %}
     <hr>
 
-{% comment %}
+
     {% if is_paginated %}
         <div class="pagination">
             <span class="page-links">
                 {% if page_obj.has_previous %}
-                    <a href="/?page={{ page_obj.previous_page_number }}">previous</a>
+                    <a href="?page={{ page_obj.previous_page_number }}">previous</a>
                 {% endif %}
                 <span class="page-current">
                     Page {{ page_obj.number }} of {{ page_obj.paginator.num_pages }}.
                 </span>
                 {% if page_obj.has_next %}
-                    <a href="/?page={{ page_obj.next_page_number }}">next</a>
+                    <a href="?page={{ page_obj.next_page_number }}">next</a>
                 {% endif %}
             </span>
         </div>
@@ -54,8 +54,46 @@
 {% else %}
     <h3>My Cars</h3>
     <p>No cars found!!! :(</p>
-{% endcomment %}
+
 {% endif %}
+
+
+
+    {% comment %}{% if posts.has_other_pages %}
+            <ul>
+              {% if posts.has_previous %}
+              <li>
+                <a href="?page={{posts.previous_page_number}}">&laquo;</a>
+              </li>
+              {% else %}
+                <li>
+                  <a>&laquo;</a>
+                </li>
+              {% endif %}
+              {% for i in posts.paginator.page_range %}
+                {% if posts.number == i %}
+                  <li>
+                    <a>{{i}}</a>
+                  </li>
+                {% else %}
+                  <li>
+                    <a href="?page={{i}}">{{i}}</a>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              {% if posts.has_next %}
+                <li>
+                  <a href="?page={{posts.next_page_number}}" class="page-link">&raquo;</a>
+                </li>
+              {% else %}
+                <li>
+                  <a>&raquo;</a>
+                </li>
+              {% endif %}
+
+            </ul>
+          {% endif %}
+          {% endcomment %}
 
 {% endblock content %}
 

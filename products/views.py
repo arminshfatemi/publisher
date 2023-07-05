@@ -9,6 +9,7 @@ class BookListView(ListView):
     model = Book
     template_name = 'products/allposts.html'
     context_object_name = 'books'
+    paginate_by = 1
 
     def get_queryset(self, *args, **kwargs):
         qs = super(BookListView, self).get_queryset(*args, **kwargs)
@@ -29,5 +30,9 @@ class BookDetailView(DetailView):
 class BookCreateView(CreateView):
     model = Book
     template_name = "products/bookcreate.html"
-    #form_class = BookForm
+    # form_class = BookForm
     fields = ["name", "description", "author", "category", "is_enable", "file"]
+
+
+def AboutView(request):
+    return render(request, 'products/about.html')
