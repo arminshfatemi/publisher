@@ -4,7 +4,7 @@
 <html lang="en">
 <head>
     <link rel="stylesheet" href="{% static "css/navbar.css" %}">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta charset="UTF-8">
     <title>Navbar</title>
 </head>
@@ -22,6 +22,14 @@
   <a href="{% url 'register' %}">signup</a>
     {% endif %}
     <a href="{% url 'about' %}">about</a>
+
+    <div class="search-container">
+    <form action="{% url 'search' %}">
+      <input type="text" placeholder="Search.." name="search_text">
+      <button type="submit"><i class="fa fa-search"></i></button>
+    </form>
+  </div>
+
 </div>
 
 </body>

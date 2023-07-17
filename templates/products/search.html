@@ -1,24 +1,15 @@
 {% extends 'base/base.html' %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>All Posts page</title>
+    <title>search</title>
 </head>
 <body>
+{% block content  %}
+{% if posts %}
 
-{% block content %}
-
-    {% if user.is_authenticated %}
-        <h3> Wellcome {{ user.username }}</h3>
-    {% else %}
-        <h3>Wellcome  dear guest</h3>
-    {% endif %}
-
-{% if books %}
-
-        {% for book in books %}
+        {% for book in posts %}
             <li>
                 <ul><b> book name:</b> {{ book.name }}</ul>
                 <ul><b>description:</b> {{ book.description }}</ul>
@@ -57,45 +48,6 @@
 
 {% endif %}
 
-
-
-    {% comment %}{% if posts.has_other_pages %}
-            <ul>
-              {% if posts.has_previous %}
-              <li>
-                <a href="?page={{posts.previous_page_number}}">&laquo;</a>
-              </li>
-              {% else %}
-                <li>
-                  <a>&laquo;</a>
-                </li>
-              {% endif %}
-              {% for i in posts.paginator.page_range %}
-                {% if posts.number == i %}
-                  <li>
-                    <a>{{i}}</a>
-                  </li>
-                {% else %}
-                  <li>
-                    <a href="?page={{i}}">{{i}}</a>
-                  </li>
-                {% endif %}
-              {% endfor %}
-              {% if posts.has_next %}
-                <li>
-                  <a href="?page={{posts.next_page_number}}" class="page-link">&raquo;</a>
-                </li>
-              {% else %}
-                <li>
-                  <a>&raquo;</a>
-                </li>
-              {% endif %}
-
-            </ul>
-          {% endif %}
-          {% endcomment %}
-
 {% endblock content %}
-
 </body>
 </html>

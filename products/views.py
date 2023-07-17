@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.views.generic import ListView, DetailView, CreateView
+from django.db.models import Q
 
 from .forms import BookForm
 from .models import Category, Author, Book
@@ -36,3 +37,20 @@ class BookCreateView(CreateView):
 
 def AboutView(request):
     return render(request, 'products/about.html')
+
+
+def SearchView(request):
+    posts = Book.objects.order_by('-created_time').filter(is_enable=True)
+
+    if 'search_text' in request.GET:
+        search_text = request.GET['search_text']
+
+        if search_text:
+            posts = posts.filter(Q(name__contains=search_text)
+                                 | Q(description__contains=search_text)
+                                 | Q(author__name__contains=search_text))
+    context = {
+        'posts': posts
+    }
+
+    return render(request, 'products/search.html', context)
