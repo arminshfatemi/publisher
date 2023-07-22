@@ -24,3 +24,10 @@ class BookSerializer(serializers.ModelSerializer):
 
         # 'author', 'category', 'is_enable', 'file', 'created_time')
 
+class BookDetailSerializer(serializers.ModelSerializer):
+    category = CategorySerializer()
+    author = AuthorSerializer()
+
+    class Meta:
+        model = Book
+        fields = ('name', 'description', 'author', 'category', 'is_enable', 'file', 'created_time')
